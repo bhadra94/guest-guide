@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Fairbanks Inn — Guest Guide</title>
+    <meta name="description" content="Fairbanks Inn Guest Guide for hotel information, dining, services, and local attractions in St. Johnsbury, VT." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="antialiased bg-white text-slate-900 selection:bg-slate-900 selection:text-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="h-16 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-[18px] sm:text-[20px] font-semibold tracking-tight">Fairbanks Inn</span>
+              <span class="text-xs text-slate-500">Guest Guide • St. Johnsbury, Vermont</span>
+            </div>
+          </div>
+          <div class="hidden sm:flex items-center gap-2">
+            <a href="tel:+18027485666" class="inline-flex items-center gap-2 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span class="text-sm font-medium">Call Front Desk</span>
+            </a>
+            <a href="mailto:gmfairbanksinn@gmail.com" class="inline-flex items-center gap-2 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span class="text-sm font-medium">Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="relative">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1600&auto=format&fit=crop" alt="St. Johnsbury Vermont landscape" class="w-full h-[220px] sm:h-[300px] object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="relative -mt-24 sm:-mt-28">
+          <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+              <div>
+                <h1 class="text-[24px] sm:text-[28px] font-semibold tracking-tight">Welcome to Fairbanks Inn</h1>
+                <p class="text-slate-600 text-sm sm:text-[15px] mt-1">Your quick guide to hotel essentials, local dining, outdoor activities, and nearby services.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="#contact-map" class="inline-flex items-center gap-2 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium">Directions</span>
+                </a>
+                <a href="http://www.stjay.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 h-9 px-3 rounded-md bg-slate-900 text-white hover:bg-black transition-colors">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium">Hotel Website</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-6">
+              <div class="border border-slate-200 rounded-lg p-4">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="wifi" class="w-4 h-4 text-slate-700"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Wi‑Fi</h3>
+                  </div>
+                  <button id="copy-wifi" class="text-xs text-slate-600 hover:text-slate-900 underline underline-offset-2">Copy</button>
+                </div>
+                <div class="mt-2 text-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500">Network</span>
+                    <span class="font-medium">Fairbanks Inn</span>
+                  </div>
+                  <div class="flex items-center justify-between mt-1">
+                    <span class="text-slate-500">Password</span>
+                    <span class="font-medium" id="wifi-pass">fairbanks</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border border-slate-200 rounded-lg p-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-slate-700"></i>
+                  <h3 class="text-[15px] font-medium tracking-tight">Times</h3>
+                </div>
+                <div class="mt-2 text-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500">Check‑in</span>
+                    <span class="font-medium">3 PM</span>
+                  </div>
+                  <div class="flex items-center justify-between mt-1">
+                    <span class="text-slate-500">Check‑out</span>
+                    <span class="font-medium">11 AM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border border-slate-200 rounded-lg p-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="coffee" class="w-4 h-4 text-slate-700"></i>
+                  <h3 class="text-[15px] font-medium tracking-tight">Breakfast</h3>
+                </div>
+                <div class="mt-2 text-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500">Hours</span>
+                    <span class="font-medium">6:30 AM – 9:00 AM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Sections (Mobile) -->
+            <div class="mt-4 sm:mt-6 -mx-2 overflow-x-auto">
+              <div class="px-2 flex items-center gap-2">
+                <a href="#hotel-info" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="info" class="w-4 h-4"></i> Info
+                </a>
+                <a href="#dining" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="utensils" class="w-4 h-4"></i> Dining
+                </a>
+                <a href="#trails" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="mountain" class="w-4 h-4"></i> Trails
+                </a>
+                <a href="#attractions" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i> Attractions
+                </a>
+                <a href="#shopping" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="shopping-bag" class="w-4 h-4"></i> Shopping
+                </a>
+                <a href="#contact-map" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="map" class="w-4 h-4"></i> Map
+                </a>
+                <a href="#enhanced-maps" class="whitespace-nowrap inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-sm">
+                  <i data-lucide="map" class="w-4 h-4"></i> Interactive
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Layout -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-6 sm:mt-10 pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block lg:col-span-3">
+          <nav class="sticky top-[92px] bg-white border border-slate-200 rounded-xl p-3">
+            <div class="px-2 py-2 text-xs uppercase tracking-wide text-slate-500">Sections</div>
+            <ul class="space-y-1">
+              <li><a href="#hotel-info" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 hover:text-slate-900 text-sm text-slate-700"><i data-lucide="info" class="w-4 h-4"></i> Hotel Information</a></li>
+              <li><a href="#laundry" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="shirt" class="w-4 h-4"></i> Laundry</a></li>
+              <li><a href="#taxis" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="car" class="w-4 h-4"></i> Taxi Services</a></li>
+              <li><a href="#dining" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="utensils" class="w-4 h-4"></i> Restaurants</a></li>
+              <li><a href="#trails" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="mountain" class="w-4 h-4"></i> Trails & Outdoor</a></li>
+              <li><a href="#attractions" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="sparkles" class="w-4 h-4"></i> Attractions</a></li>
+              <li><a href="#churches" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="landmark" class="w-4 h-4"></i> Churches & Schools</a></li>
+              <li><a href="#shopping" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="shopping-bag" class="w-4 h-4"></i> Shopping & Services</a></li>
+              <li><a href="#contact-map" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="map-pin" class="w-4 h-4"></i> Contact & Map</a></li>
+              <li><a href="#enhanced-maps" class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"><i data-lucide="map" class="w-4 h-4"></i> Interactive Maps</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <section class="lg:col-span-9 space-y-8">
+          <!-- Hotel Information -->
+          <div id="hotel-info" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <div class="flex items-center justify-between">
+                <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Hotel Information</h2>
+                <span class="text-xs text-slate-500">Fairbanks Inn</span>
+              </div>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Address</div>
+                      <div class="font-medium">401 Western Avenue, St. Johnsbury, VT 05819</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="phone" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Phone</div>
+                      <a href="tel:+18027485666" class="font-medium hover:underline">+1 (802) 748-5666</a>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="mail" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Email</div>
+                      <a href="mailto:gmfairbanksinn@gmail.com" class="font-medium hover:underline">gmfairbanksinn@gmail.com</a>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="globe" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Website</div>
+                      <a href="http://www.stjay.com" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">www.stjay.com</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="wifi" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Wi‑Fi</div>
+                      <div class="font-medium">Name: Fairbanks Inn</div>
+                      <div class="font-medium">Password: fairbanks</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="clock" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Check‑in / Check‑out</div>
+                      <div class="font-medium">3 PM / 11 AM</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="coffee" class="w-4 h-4 mt-0.5"></i>
+                    <div>
+                      <div class="text-slate-500">Breakfast</div>
+                      <div class="font-medium">6:30 AM – 9:00 AM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laundry -->
+          <div id="laundry" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Laundry</h2>
+              <p class="text-sm text-slate-600 mt-2">No on-site laundry. Please use the following service:</p>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="shirt" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Portland Street Laundromat</h3>
+                  </div>
+                  <div class="mt-2 text-sm space-y-1">
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-slate-600"></i>
+                      <span>642 Portland St</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-slate-600"></i>
+                      <a class="hover:underline" href="tel:+18027488964">(802) 748-8964</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Taxi Services -->
+          <div id="taxis" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Taxi Services</h2>
+              <p class="text-sm text-slate-600 mt-2">No Uber/Lyft available in town. Local options:</p>
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="car" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Town Taxi</h3>
+                  </div>
+                  <div class="mt-2 text-sm space-y-1">
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-slate-600"></i>
+                      <span>162 Concord Ave</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-slate-600"></i>
+                      <a class="hover:underline" href="tel:+18027481119">(802) 748-1119</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="car" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Tanya's Taxi</h3>
+                  </div>
+                  <div class="mt-2 text-sm space-y-1">
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-slate-600"></i>
+                      <a class="hover:underline" href="tel:+18027481119">(802) 748-1119</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dining & Restaurants -->
+          <div id="dining" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <div class="flex items-end justify-between gap-4">
+                <div>
+                  <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Restaurants</h2>
+                  <p class="text-sm text-slate-600 mt-1">Browse local spots. Search by name or address.</p>
+                </div>
+                <div class="w-full sm:w-72">
+                  <label class="sr-only" for="restaurants-search">Search restaurants</label>
+                  <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input id="restaurants-search" type="text" placeholder="Search restaurants..." class="w-full h-10 pl-9 pr-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-300 text-sm" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Table (responsive cards on mobile) -->
+              <div class="mt-4">
+                <div class="hidden md:grid grid-cols-12 px-3 py-2 text-xs font-medium text-slate-500 uppercase tracking-wide">
+                  <div class="col-span-4">Name</div>
+                  <div class="col-span-4">Address</div>
+                  <div class="col-span-2">Phone</div>
+                  <div class="col-span-2">Hours</div>
+                </div>
+                <div id="restaurants-list" class="divide-y divide-slate-200 border border-slate-200 rounded-lg overflow-hidden">
+                  <!-- Row template: data-name / data-address for filtering -->
+                  <!-- Each item -->
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="98 Mill" data-address="98 Mill St" data-phone="" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">98 Mill</div>
+                    <div class="col-span-4 text-slate-700">98 Mill St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Anthony's Diner" data-address="321 Railroad St" data-hours="Daily 6am-2pm">
+                    <div class="col-span-4 font-medium">Anthony's Diner</div>
+                    <div class="col-span-4 text-slate-700">321 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 6am-2pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Boxfit" data-address="662 Railroad St" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Boxfit</div>
+                    <div class="col-span-4 text-slate-700">662 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="The Buttery" data-address="379 Railroad St, Ste 101" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">The Buttery</div>
+                    <div class="col-span-4 text-slate-700">379 Railroad St, Ste 101</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="The Campfire" data-address="384 Railroad St" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">The Campfire</div>
+                    <div class="col-span-4 text-slate-700">384 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Downtown Bar & Grill" data-address="94 Eastern Ave" data-hours="—">
+                    <div class="col-span-4 font-medium">Downtown Bar & Grill</div>
+                    <div class="col-span-4 text-slate-700">94 Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Eastern & Main Market & Deli" data-address="104 Main St" data-hours="Daily 6am-9pm">
+                    <div class="col-span-4 font-medium">Eastern & Main Market & Deli</div>
+                    <div class="col-span-4 text-slate-700">104 Main St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 6am-9pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Hilltopper (school year only)" data-address="916 Main St" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Hilltopper (school year only)</div>
+                    <div class="col-span-4 text-slate-700">916 Main St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Horizons Deli" data-address="552 Railroad St" data-hours="Daily 6am-3pm">
+                    <div class="col-span-4 font-medium">Horizons Deli</div>
+                    <div class="col-span-4 text-slate-700">552 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 6am-3pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Lucha Bill's Almost Authentic Mexican" data-address="1214 Main St" data-hours="Daily 11:30am-9pm">
+                    <div class="col-span-4 font-medium">Lucha Bill's Almost Authentic Mexican</div>
+                    <div class="col-span-4 text-slate-700">1214 Main St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11:30am-9pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Kingdom Crust Company" data-address="1216 Railroad St" data-hours="Daily 11am-7pm">
+                    <div class="col-span-4 font-medium">Kingdom Crust Company</div>
+                    <div class="col-span-4 text-slate-700">1216 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11am-7pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Kitchen Counter Café" data-address="378 Railroad St, Ste 3" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Kitchen Counter Café</div>
+                    <div class="col-span-4 text-slate-700">378 Railroad St, Ste 3</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Locally Social Coffee" data-address="757 Portland St" data-hours="Daily 7am-3pm">
+                    <div class="col-span-4 font-medium">Locally Social Coffee</div>
+                    <div class="col-span-4 text-slate-700">757 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 7am-3pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Wildhouse Ice Cream (seasonal)" data-address="592 Portland St" data-hours="Closed Mon">
+                    <div class="col-span-4 font-medium">Wildhouse Ice Cream (seasonal)</div>
+                    <div class="col-span-4 text-slate-700">592 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Closed Mon</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="New Century Chinese Restaurant" data-address="264 Portland St" data-hours="Daily 11am-9pm">
+                    <div class="col-span-4 font-medium">New Century Chinese Restaurant</div>
+                    <div class="col-span-4 text-slate-700">264 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11am-9pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="New East Garden" data-address="169 Railroad St" data-hours="Daily 11am-9:30pm">
+                    <div class="col-span-4 font-medium">New East Garden</div>
+                    <div class="col-span-4 text-slate-700">169 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11am-9:30pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Salt Bistro" data-address="94 Eastern Ave" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Salt Bistro</div>
+                    <div class="col-span-4 text-slate-700">94 Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Sam's Listening Bar" data-address="397 Railroad St (downstairs)" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Sam's Listening Bar</div>
+                    <div class="col-span-4 text-slate-700">397 Railroad St (downstairs)</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="St. J. Country Store" data-address="537 Railroad St" data-hours="Daily 6am-9pm">
+                    <div class="col-span-4 font-medium">St. J. Country Store</div>
+                    <div class="col-span-4 text-slate-700">537 Railroad St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 6am-9pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="St. Johnsbury Distillery" data-address="374 Eastern Ave" data-hours="Closed Mon">
+                    <div class="col-span-4 font-medium">St. Johnsbury Distillery</div>
+                    <div class="col-span-4 text-slate-700">374 Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Closed Mon</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="St. Johnsbury House of Pizza" data-address="427 Portland St" data-hours="Daily 11am-10pm">
+                    <div class="col-span-4 font-medium">St. Johnsbury House of Pizza</div>
+                    <div class="col-span-4 text-slate-700">427 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11am-10pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="St. J. Summer Farmers Market" data-address="Pearl St & Eastern Ave" data-hours="—">
+                    <div class="col-span-4 font-medium">St. J. Summer Farmers Market</div>
+                    <div class="col-span-4 text-slate-700">Pearl St & Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="St. J. Winter Farmers Market" data-address="Welcome Center, 51 Depot Sq" data-hours="—">
+                    <div class="col-span-4 font-medium">St. J. Winter Farmers Market</div>
+                    <div class="col-span-4 text-slate-700">Welcome Center, 51 Depot Sq</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Supa Spice Crab & Go Kitchen" data-address="21 Memorial Drive" data-hours="Daily 11am-9pm">
+                    <div class="col-span-4 font-medium">Supa Spice Crab & Go Kitchen</div>
+                    <div class="col-span-4 text-slate-700">21 Memorial Drive</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 11am-9pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Tim's Deli" data-address="580 Portland St" data-hours="Daily 6am-3pm">
+                    <div class="col-span-4 font-medium">Tim's Deli</div>
+                    <div class="col-span-4 text-slate-700">580 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 6am-3pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Wandering Vine" data-address="378 Railroad St, Ste 1" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Wandering Vine</div>
+                    <div class="col-span-4 text-slate-700">378 Railroad St, Ste 1</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Whirligig Brewing & Bistro" data-address="397 Railroad St, Unit 2" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Whirligig Brewing & Bistro</div>
+                    <div class="col-span-4 text-slate-700">397 Railroad St, Unit 2</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="The Whiskey Den" data-address="48 Eastern Ave" data-hours="Daily 4pm-11pm">
+                    <div class="col-span-4 font-medium">The Whiskey Den</div>
+                    <div class="col-span-4 text-slate-700">48 Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 4pm-11pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="The White Market" data-address="385 Portland St" data-hours="Daily 8am-6pm">
+                    <div class="col-span-4 font-medium">The White Market</div>
+                    <div class="col-span-4 text-slate-700">385 Portland St</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 8am-6pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Yummies at Five Star" data-address="17 Eastern Ave" data-hours="Mon: Closed">
+                    <div class="col-span-4 font-medium">Yummies at Five Star</div>
+                    <div class="col-span-4 text-slate-700">17 Eastern Ave</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Mon: Closed</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="Arby's" data-address="—" data-hours="Daily 10am-10pm">
+                    <div class="col-span-4 font-medium">Arby's</div>
+                    <div class="col-span-4 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Daily 10am-10pm</div>
+                  </div>
+
+                  <div class="md:grid md:grid-cols-12 px-3 py-3 hover:bg-slate-50 transition-colors" data-name="McDonald's & Cove" data-address="—" data-hours="Seasonal – Closed Mon-Tue">
+                    <div class="col-span-4 font-medium">McDonald's & Cove</div>
+                    <div class="col-span-4 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">—</div>
+                    <div class="col-span-2 text-slate-700">Seasonal – Closed Mon-Tue</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trails & Outdoor Activities -->
+          <div id="trails" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Trails & Outdoor Activities</h2>
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="mountain" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Lamoille Valley Rail Trail (LVRT)</h3>
+                  </div>
+                  <p class="text-sm text-slate-700 mt-2">533 Main St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="route" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">LVEC Mission Trailhead</h3>
+                  </div>
+                  <p class="text-sm text-slate-700 mt-2">195 Bay St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="map" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">The Knob Hiking Trail</h3>
+                  </div>
+                  <p class="text-sm text-slate-700 mt-2">Access from Mt. Pleasant St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="trees" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">St. Johnsbury Town Forest</h3>
+                  </div>
+                  <p class="text-sm text-slate-700 mt-2">Amenity Hill Rd</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4 md:col-span-2">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="ice-cream" class="w-4 h-4"></i>
+                    <h3 class="text-[15px] font-medium tracking-tight">Winter Ice Skating Rink</h3>
+                  </div>
+                  <p class="text-sm text-slate-700 mt-2">Concord & Portland St</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attractions & Points of Interest -->
+          <div id="attractions" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Attractions & Points of Interest</h2>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="planet" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Fairbanks Museum & Planetarium</span></div>
+                  <p class="text-sm text-slate-700 mt-2">1302 Main St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="book-open-text" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">St. Johnsbury Athenaeum</span></div>
+                  <p class="text-sm text-slate-700 mt-2">1171 Main St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="film" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Catamount Film & Arts Center</span></div>
+                  <p class="text-sm text-slate-700 mt-2">115 Eastern Ave</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="leaf" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Maple Grove Farms & Museum</span></div>
+                  <p class="text-sm text-slate-700 mt-2">1052 Portland St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="ferris-wheel" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Miller Park with Playground & Winter Skating</span></div>
+                  <p class="text-sm text-slate-700 mt-2">26 Denver St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="landmark" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Caledonia Co. Court House Park</span></div>
+                  <p class="text-sm text-slate-700 mt-2">1626 Main St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="bowling-ball" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Cold Crown Lanes</span></div>
+                  <p class="text-sm text-slate-700 mt-2">212 Hastings Hill</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="tennis" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Kiwanis Pool & Tennis Courts</span></div>
+                  <p class="text-sm text-slate-700 mt-2">Barker Ave</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="heart-pulse" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Kingdom Recovery Center/Turning Point Home of VT, Inc</span></div>
+                  <p class="text-sm text-slate-700 mt-2">297 Summer St</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="film" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Star Theatre</span></div>
+                  <p class="text-sm text-slate-700 mt-2">17 Eastern Ave</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4">
+                  <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Welcome Center / Discover St. Johnsbury & Town Offices</span></div>
+                  <p class="text-sm text-slate-700 mt-2">51 Depot Sq</p>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4 sm:col-span-2">
+                  <div class="flex items-center gap-2"><i data-lucide="tree-pine" class="w-4 h-4"></i><span class="text-[15px] font-medium tracking-tight">Mount Pleasant Cemetery</span></div>
+                  <p class="text-sm text-slate-700 mt-2">85 Summer St</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Churches & Schools -->
+          <div id="churches" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Churches & Schools</h2>
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+                <!-- Left column -->
+                <div class="space-y-3">
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="scroll-text" class="w-4 h-4"></i><span class="text-[15px] font-medium">Bethel Synagogue</span></div>
+                    <p class="text-sm text-slate-700 mt-2">1097 Hospital Drive</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="school" class="w-4 h-4"></i><span class="text-[15px] font-medium">Good Shepherd School</span></div>
+                    <p class="text-sm text-slate-700 mt-2">630 Maple St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">Grace Methodist Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">96 Central St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">United Community Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">1525 Main St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">Pleasant Street Baptist Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">143 Pleasant St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="school" class="w-4 h-4"></i><span class="text-[15px] font-medium">Cornerstone School</span></div>
+                    <p class="text-sm text-slate-700 mt-2">552 Portland St</p>
+                  </div>
+                </div>
+                <!-- Right column -->
+                <div class="space-y-3">
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">St. Andrew's Episcopal Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">1265 Main St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">St. John's Catholic Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">46 Winter St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4"></i><span class="text-[15px] font-medium">St. Johnsbury Academy</span></div>
+                    <p class="text-sm text-slate-700 mt-2">1000 Main St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="school" class="w-4 h-4"></i><span class="text-[15px] font-medium">St. Johnsbury Town School</span></div>
+                    <p class="text-sm text-slate-700 mt-2">257 Western Ave</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">Seventh Day Adventist Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">54 Southard St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">Universalist Unitarian Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">47 Cherry St</p>
+                  </div>
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-center gap-2"><i data-lucide="church" class="w-4 h-4"></i><span class="text-[15px] font-medium">Union Baptist Church</span></div>
+                    <p class="text-sm text-slate-700 mt-2">952 US Rt 5</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shopping & Services -->
+          <div id="shopping" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Shopping & Services</h2>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <!-- List all items -->
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">443 Consignment</div><p class="text-sm text-slate-700 mt-1">443 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Aquarelm Pets & Aquarium</div><p class="text-sm text-slate-700 mt-1">1216 Railroad St, Ste 1</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Art & Joy</div><p class="text-sm text-slate-700 mt-1">375 Railroad St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Aubuchon ACE Hardware</div><p class="text-sm text-slate-700 mt-1">722 Hastings Hill Rd</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Boxcar & Caboose</div><p class="text-sm text-slate-700 mt-1">394 Railroad St, Ste 2</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">CCR Sports</div><p class="text-sm text-slate-700 mt-1">430 Portland St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Claire's Consignment Shop</div><p class="text-sm text-slate-700 mt-1">14 Eastern Ave</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Clay & Around Pottery Studio</div><p class="text-sm text-slate-700 mt-1">443 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Cole's Redemption</div><p class="text-sm text-slate-700 mt-1">642 Portland St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Chrysalis Creative</div><p class="text-sm text-slate-700 mt-1">75 Eastern Ave, Ste 203</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Dad's 6-By Tool & Supply</div><p class="text-sm text-slate-700 mt-1">22 Memorial Dr</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Dark Tower Gaming</div><p class="text-sm text-slate-700 mt-1">442 Portland St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Dead Fox Vintage</div><p class="text-sm text-slate-700 mt-1">148 Eastern Ave</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Fire On The Hill</div><p class="text-sm text-slate-700 mt-1">166 Eastern Ave</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Fitness Jungle</div><p class="text-sm text-slate-700 mt-1">156 Eastern Ave</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">The Frame Dames</div><p class="text-sm text-slate-700 mt-1">415 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Fox & Flowers</div><p class="text-sm text-slate-700 mt-1">196 Eastern Ave</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">The Framing Format</div><p class="text-sm text-slate-700 mt-1">485 Lafayette St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Heart Space Healing Center</div><p class="text-sm text-slate-700 mt-1">515 Bay St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Kingdom Home Goods & Antiques</div><p class="text-sm text-slate-700 mt-1">443 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Lift Up Thrift Shop</div><p class="text-sm text-slate-700 mt-1">178 Eastern Ave</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Magic Well Co.</div><p class="text-sm text-slate-700 mt-1">190 Eastern Ave, Ste 6</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Mayo's Furniture & Floor Coverings</div><p class="text-sm text-slate-700 mt-1">802 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Moose River Lake & Lodge Store</div><p class="text-sm text-slate-700 mt-1">370 Railroad St, Ste 1</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Northeast Cannabis</div><p class="text-sm text-slate-700 mt-1">166 Railroad Street</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Northeast Kingdom Artisans Guild</div><p class="text-sm text-slate-700 mt-1">430 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Northeastern Vermont Regional Hospital</div><p class="text-sm text-slate-700 mt-1">1315 Hospital Drive</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Northern Express Care</div><p class="text-sm text-slate-700 mt-1">457 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Post Office</div><p class="text-sm text-slate-700 mt-1">1153 Main St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Rec Fit StJ</div><p class="text-sm text-slate-700 mt-1">49 Portland St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Rent-A-Center</div><p class="text-sm text-slate-700 mt-1">429 Portland St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Salvation Army Thrift Store</div><p class="text-sm text-slate-700 mt-1">250 Railroad St, Ste 2</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">St. Johnsbury Police & Fire Depts</div><p class="text-sm text-slate-700 mt-1">1187 Main St</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Secondhand Prose</div><p class="text-sm text-slate-700 mt-1">122 Main St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">State Police</div><p class="text-sm text-slate-700 mt-1">1063 US Rt 5</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Twisted Roots Art</div><p class="text-sm text-slate-700 mt-1">191 Eastern Ave</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Washburn Tattoo</div><p class="text-sm text-slate-700 mt-1">452 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">The Yarn Bank</div><p class="text-sm text-slate-700 mt-1">547 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Vermont Vintage</div><p class="text-sm text-slate-700 mt-1">124 Eastern Ave</p></div>
+
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">VT Candle and Supply Co.</div><p class="text-sm text-slate-700 mt-1">443 Railroad St</p></div>
+                <div class="border border-slate-200 rounded-lg p-4"><div class="text-[15px] font-medium">Yaboydellaoth Curiosity Shop</div><p class="text-sm text-slate-700 mt-1">71 Eastern Ave</p></div>
+                <div class="border border-slate-200 rounded-lg p-4 lg:col-span-3"><div class="text-[15px] font-medium">What to Wear Boutique</div><p class="text-sm text-slate-700 mt-1">448 Railroad St</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Map -->
+          <div id="contact-map" class="scroll-mt-28">
+            <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+              <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight">Contact & Map</h2>
+              <div class="mt-4 grid grid-cols-1 lg:grid-cols-5 gap-4">
+                <div class="lg:col-span-2 space-y-3">
+                  <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex items-start gap-2">
+                      <i data-lucide="phone" class="w-4 h-4 mt-0.5"></i>
+                      <div>
+                        <div class="text-slate-500 text-sm">Front Desk Phone</div>
+                        <a href="tel:+18027485666" class="font-medium hover:underline">+1 (802) 748-5666</a>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-3">
+                      <i data-lucide="mail" class="w-4 h-4 mt-0.5"></i>
+                      <div>
+                        <div class="text-slate-500 text-sm">Email</div>
+                        <a href="mailto:gmfairbanksinn@gmail.com" class="font-medium hover:underline">gmfairbanksinn@gmail.com</a>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-3">
+                      <i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i>
+                      <div>
+                        <div class="text-slate-500 text-sm">Address</div>
+                        <div class="font-medium">401 Western Avenue, St. Johnsbury, VT 05819</div>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-3">
+                      <i data-lucide="globe" class="w-4 h-4 mt-0.5"></i>
+                      <div>
+                        <div class="text-slate-500 text-sm">Website</div>
+                        <a href="http://www.stjay.com" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">www.stjay.com</a>
+                      </div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2">
+                      <a href="https://www.google.com/maps/dir/?api=1&destination=401+Western+Ave%2C+St.+Johnsbury%2C+VT+05819" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 h-9 px-3 rounded-md bg-slate-900 text-white hover:bg-black transition-colors">
+                        <i data-lucide="navigation" class="w-4 h-4"></i>
+                        <span class="text-sm font-medium">Start Directions</span>
+                      </a>
+                      <a href="tel:+18027485666" class="inline-flex items-center gap-2 h-9 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <span class="text-sm font-medium">Call</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="lg:col-span-3">
+                  <div class="rounded-lg border border-slate-200 overflow-hidden">
+                    <div class="w-full aspect-[4/3]">
+                      <iframe
+                        title="Fairbanks Inn Location"
+                        class="w-full h-full"
+                        style="border:0;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.9834168191527!2d-72.021!3d44.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb4b4b6d12b4a3f%3A0x0000000000000000!2s401%20Western%20Ave%2C%20St%20Johnsbury%2C%20VT%2005819!5e0!3m2!1sen!2sus!4v1699999999999">
+                      </iframe>
+                    </div>
+                    
+                    <!-- Interactive Map Controls -->
+                    <div class="p-3 bg-slate-50 border-t border-slate-200">
+                      <div class="flex flex-wrap gap-2">
+                        <button id="map-hotels" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                          <i data-lucide="bed" class="w-3 h-3"></i>
+                          Hotels
+                        </button>
+                        <button id="map-restaurants" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                          <i data-lucide="utensils" class="w-3 h-3"></i>
+                          Restaurants
+                        </button>
+                        <button id="map-attractions" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                          <i data-lucide="sparkles" class="w-3 h-3"></i>
+                          Attractions
+                        </button>
+                        <button id="map-shopping" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                          <i data-lucide="shopping-bag" class="w-3 h-3"></i>
+                          Shopping
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhanced Maps Section -->
+          <div id="enhanced-maps" class="scroll-mt-28 bg-white border border-slate-200 rounded-xl p-5 sm:p-6">
+            <h2 class="text-[22px] sm:text-[24px] font-semibold tracking-tight mb-4">Interactive Maps</h2>
+            <p class="text-sm text-slate-600 mb-4">Explore St. Johnsbury with our interactive map collection. Switch between different views and categories.</p>
+            
+            <!-- Map Tabs -->
+            <div class="mb-4">
+              <div class="flex border-b border-slate-200 overflow-x-auto">
+                <button id="map-tab-main" class="px-4 py-2 text-sm font-medium border-b-2 border-slate-900 text-slate-900 whitespace-nowrap">Main Map</button>
+                <button id="map-tab-restaurants" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 whitespace-nowrap">Restaurants</button>
+                <button id="map-tab-attractions" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 whitespace-nowrap">Attractions</button>
+                <button id="map-tab-shopping" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 whitespace-nowrap">Shopping</button>
+              </div>
+            </div>
+            
+            <!-- Map Container -->
+            <div class="rounded-lg border border-slate-200 overflow-hidden">
+              <div id="map-container" class="w-full aspect-[4/3]">
+                <!-- Main Map -->
+                <div id="map-main" class="w-full h-full">
+                  <iframe
+                    title="Fairbanks Inn Location"
+                    class="w-full h-full"
+                    style="border:0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.9834168191527!2d-72.021!3d44.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb4b4b6d12b4a3f%3A0x0000000000000000!2s401%20Western%20Ave%2C+St%20Johnsbury%2C+VT+05819!5e0!3m2!1sen!2sus!4v1699999999999">
+                  </iframe>
+                </div>
+                
+                <!-- Restaurants Map -->
+                <div id="map-restaurants" class="w-full h-full hidden">
+                  <iframe
+                    title="St. Johnsbury Restaurants"
+                    class="w-full h-full"
+                    style="border:0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2778.9834168191527!2d-72.021!3d44.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb4b4b6d12b4a3f%3A0x0000000000000000!2s401%20Western%20Ave%2C+St%20Johnsbury%2C+VT+05819!5e0!3m2!1sen!2sus!4v1699999999999&q=restaurants+in+St+Johnsbury+VT">
+                  </iframe>
+                </div>
+                
+                <!-- Attractions Map -->
+                <div id="map-attractions" class="w-full h-full hidden">
+                  <iframe
+                    title="St. Johnsbury Attractions"
+                    class="w-full h-full"
+                    style="border:0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2778.9834168191527!2d-72.021!3d44.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb4b4b6d12b4a3f%3A0x0000000000000000!2s401%20Western%20Ave%2C+St%20Johnsbury%2C+VT+05819!5e0!3m2!1sen!2sus!4v1699999999999&q=attractions+in+St+Johnsbury+VT">
+                  </iframe>
+                </div>
+                
+                <!-- Shopping Map -->
+                <div id="map-shopping" class="w-full h-full hidden">
+                  <iframe
+                    title="St. Johnsbury Shopping"
+                    class="w-full h-full"
+                    style="border:0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2778.9834168191527!2d-72.021!3d44.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb4b4b6d12b4a3f%3A0x0000000000000000!2s401%20Western%20Ave%2C+St%20Johnsbury%2C+VT+05819!5e0!3m2!1sen!2sus!4v1699999999999&q=shopping+in+St+Johnsbury+VT">
+                  </iframe>
+                </div>
+              </div>
+              
+              <!-- Map Controls -->
+              <div class="p-3 bg-slate-50 border-t border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                  <div class="flex flex-wrap gap-2">
+                    <button id="map-fullscreen" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                      <i data-lucide="maximize" class="w-3 h-3"></i>
+                      Fullscreen
+                    </button>
+                    <button id="map-satellite" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                      <i data-lucide="map" class="w-3 h-3"></i>
+                      Satellite
+                    </button>
+                  </div>
+                  <div class="text-xs text-slate-500">
+                    <span id="current-map-type">Main Map</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Quick Map Access -->
+            <div class="mt-4 p-4 bg-slate-50 rounded-lg">
+              <h3 class="text-sm font-medium text-slate-900 mb-3">Quick Access</h3>
+              <div class="flex flex-wrap gap-2">
+                <button id="map-hotels" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                  <i data-lucide="bed" class="w-3 h-3"></i>
+                  Hotels
+                </button>
+                <button id="map-restaurants" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                  <i data-lucide="utensils" class="w-3 h-3"></i>
+                  Restaurants
+                </button>
+                <button id="map-attractions" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                  <i data-lucide="sparkles" class="w-3 h-3"></i>
+                  Attractions
+                </button>
+                <button id="map-shopping" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-slate-200 hover:border-slate-300 hover:bg-white text-xs font-medium transition-colors">
+                  <i data-lucide="shopping-bag" class="w-3 h-3"></i>
+                  Shopping
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Helpful Note -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6">
+            <div class="flex items-start gap-3">
+              <i data-lucide="info" class="w-5 h-5 text-slate-700"></i>
+              <p class="text-sm text-slate-700">
+                Hours and availability may change seasonally. We recommend calling ahead for the latest information.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="text-sm">
+              <div class="font-medium">Fairbanks Inn</div>
+              <div class="text-slate-600">401 Western Avenue, St. Johnsbury, VT</div>
+            </div>
+          </div>
+          <div class="text-sm text-slate-600">
+            © <span id="year"></span> Fairbanks Inn. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize lucide icons
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          window.lucide.createIcons({
+            attrs: { strokeWidth: 1.5 }
+          });
+        }
+
+        // Footer year
+        const y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+
+        // Copy Wi-Fi password
+        const copyBtn = document.getElementById('copy-wifi');
+        const wifiPass = document.getElementById('wifi-pass');
+        if (copyBtn && wifiPass) {
+          copyBtn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(wifiPass.textContent.trim());
+              const prev = copyBtn.textContent;
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => (copyBtn.textContent = prev), 1200);
+            } catch (e) {
+              alert('Unable to copy. Password: ' + wifiPass.textContent.trim());
+            }
+          });
+        }
+
+        // Restaurant search filter
+        const input = document.getElementById('restaurants-search');
+        const rows = Array.from(document.querySelectorAll('#restaurants-list > div'));
+        if (input) {
+          input.addEventListener('input', () => {
+            const q = input.value.toLowerCase().trim();
+            rows.forEach(row => {
+              const name = (row.getAttribute('data-name') || '').toLowerCase();
+              const addr = (row.getAttribute('data-address') || '').toLowerCase();
+              const phone = (row.getAttribute('data-phone') || '').toLowerCase();
+              const hours = (row.getAttribute('data-hours') || '').toLowerCase();
+              const show = !q || name.includes(q) || addr.includes(q) || phone.includes(q) || hours.includes(q);
+              row.style.display = show ? '' : 'none';
+            });
+          });
+        }
+
+        // Enhanced Maps Integration
+        const mapTabs = {
+          'map-tab-main': 'map-main',
+          'map-tab-restaurants': 'map-restaurants', 
+          'map-tab-attractions': 'map-attractions',
+          'map-tab-shopping': 'map-shopping'
+        };
+
+        // Map tab switching
+        Object.keys(mapTabs).forEach(tabId => {
+          const tab = document.getElementById(tabId);
+          if (tab) {
+            tab.addEventListener('click', () => {
+              // Hide all maps
+              Object.values(mapTabs).forEach(mapId => {
+                const map = document.getElementById(mapId);
+                if (map) map.classList.add('hidden');
+              });
+              
+              // Remove active state from all tabs
+              Object.keys(mapTabs).forEach(id => {
+                const t = document.getElementById(id);
+                if (t) {
+                  t.classList.remove('border-slate-900', 'text-slate-900');
+                  t.classList.add('text-slate-600');
+                }
+              });
+              
+              // Show selected map and activate tab
+              const targetMap = document.getElementById(mapTabs[tabId]);
+              if (targetMap) {
+                targetMap.classList.remove('hidden');
+                tab.classList.remove('text-slate-600');
+                tab.classList.add('border-slate-900', 'text-slate-900');
+                
+                // Update current map type display
+                const currentMapType = document.getElementById('current-map-type');
+                if (currentMapType) {
+                  currentMapType.textContent = tab.textContent;
+                }
+              }
+            });
+          }
+        });
+
+        // Map controls
+        const mapFullscreen = document.getElementById('map-fullscreen');
+        if (mapFullscreen) {
+          mapFullscreen.addEventListener('click', () => {
+            const activeMap = document.querySelector('#map-container > div:not(.hidden)');
+            if (activeMap) {
+              const iframe = activeMap.querySelector('iframe');
+              if (iframe) {
+                iframe.requestFullscreen().catch(err => {
+                  console.log('Fullscreen failed:', err);
+                });
+              }
+            }
+          });
+        }
+
+        const mapSatellite = document.getElementById('map-satellite');
+        if (mapSatellite) {
+          mapSatellite.addEventListener('click', () => {
+            const activeMap = document.querySelector('#map-container > div:not(.hidden)');
+            if (activeMap) {
+              const iframe = activeMap.querySelector('iframe');
+              if (iframe) {
+                const currentSrc = iframe.src;
+                if (currentSrc.includes('t=m')) {
+                  // Switch to regular map
+                  iframe.src = currentSrc.replace('&t=m', '');
+                } else {
+                  // Switch to satellite
+                  iframe.src = currentSrc + '&t=m';
+                }
+              }
+            }
+          });
+        }
+
+        // Quick map access buttons
+        const quickMapButtons = {
+          'map-hotels': 'map-tab-main',
+          'map-restaurants': 'map-tab-restaurants',
+          'map-attractions': 'map-tab-attractions', 
+          'map-shopping': 'map-tab-shopping'
+        };
+
+        Object.keys(quickMapButtons).forEach(buttonId => {
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.addEventListener('click', () => {
+              const targetTab = document.getElementById(quickMapButtons[buttonId]);
+              if (targetTab) targetTab.click();
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
